@@ -1,5 +1,5 @@
 ﻿# Line Following Robot
-This will serve as a brief description of your project. Limit this to three sentences because it can become overly long at that point. This copy should draw the user in and make she/him want to read more.
+My robot is an autonomous, wheeled vehicle that uses light sensors to detect a line, and follow it using dc motors. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
