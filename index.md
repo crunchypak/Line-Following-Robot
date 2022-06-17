@@ -3,7 +3,7 @@ My robot is an autonomous, wheeled vehicle that uses light sensors to detect a l
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Firstname Lastname | Current Highschool | Electrical Engineering | Incoming Senior
+| Reyna A. | Adlai E. Stevenson High School | Computer Engineering | Incoming Sophomore
 
 ![Headstone Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
   
