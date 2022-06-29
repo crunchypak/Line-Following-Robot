@@ -5,8 +5,8 @@ My robot is an autonomous, wheeled vehicle that uses light sensors to detect a l
 |:--:|:--:|:--:|:--:|
 | Reyna A. | Adlai E. Stevenson High School | Computer Engineering | Incoming Sophomore
 
-![Headstone![File_000](https://user-images.githubusercontent.com/107717711/176525400-6e0b9e9f-f252-447a-8f68-5fce4f8da314.jpeg)
- Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
+![File_000](https://user-images.githubusercontent.com/107717711/176527440-0ad7e898-2922-430e-9a36-3cb83d35e959.jpeg)
+
   
 # Final Milestone
 My final milestone consisted of adding on the last two sensors, attaching the back wheels and securing the back motors to the chassis, adding a 9V battery for extra power, and finishing the line following program. My greatest obstacles were with the IR sensors, as I needed the built in potentiometer to be set to just the right sensitivity for all three. However, with time and tweaking, testing each sensor under pieces of white and black paper with the readings printing to my computer screen, I was able to accomplish this. Other challenges included debugging the hardware and identifying the issues with so many parts and possible places of error. To work around this, I made sure to test as I went and persist if a seemingly impossible to solve problem occurred.
