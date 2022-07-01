@@ -7,7 +7,8 @@ My robot is an autonomous, wheeled vehicle that uses light sensors to detect a l
 
 https://docs.google.com/document/d/1knMDCemPxow6FKgmn9HEC7iVgEH3KeSJTzBhRPgIl_w/edit?usp=sharing
 
-![Screenshot 2022-07-01 152453](https://user-images.githubusercontent.com/107717711/176964948-9e4169c7-50d3-43e7-a25b-6a928e68f098.png)
+![BillofMaterials](https://user-images.githubusercontent.com/107717711/176966244-57a3c50f-0972-423c-9bfa-23641d67cd33.PNG)
+
 
 ![File_000](https://user-images.githubusercontent.com/107717711/176527440-0ad7e898-2922-430e-9a36-3cb83d35e959.jpeg)
 
