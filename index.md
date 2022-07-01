@@ -28,3 +28,114 @@ My second milestone is connecting the arduino, h-bridge, battery pack, and front
 My first milestone is setting up the arduino and the h-bridge in order to move DC motors. To do this, I connected each motor to the h-bridge using alligator clips to distribute the current from a 6V battery pack, and the h-bridge to the arduino as well. Four digital pins connected on the arduino corresponded to spinning the motors in different directions. By passing input, 'HIGH' or 'LOW,' to each pin using the digitalWrite function, I was able to control each motor to spin forwards or backwards with various high-low combinations. Using these different combinations, I will eventually be able to turn the car left and right as well. Despite challenges in securing the battery pack's thin wires under the screws of the h-bridge, I was able to overcome the issues by stripping each wire to expose more of the wire to grip.
 
 [![Mile Stone #!](https://res.cloudinary.com/marcomontalbano/image/upload/v1655495688/video_to_markdown/images/youtube--E6sysRuu57s-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=E6sysRuu57s&t=2s&ab_channel=BlueStampEng "Mile Stone #!")
+
+## Code
+```cpp
+<int middleAnalogPin = A0;
+int middleVal = 0; 
+int leftAnalogPin = A1;
+int leftVal = 0; 
+int rightAnalogPin = A2;
+int rightVal = 0; 
+int THRESHOLD = 300;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+
+  //pinMode(analogPin, INPUT);
+}
+
+void loop() {
+  //105 white, 1019 brown
+  //666 dark, 77 white
+  middleVal = analogRead(middleAnalogPin);
+  //Serial.println("Middle " + middleVal); 
+  //Serial.println(middleVal);
+
+  //35 white, 1019 brown
+  //665, 666, 667 dark, 20, 21 white
+  leftVal = analogRead(leftAnalogPin);
+  //Serial.println("Left " + leftVal);
+  //Serial.println(leftVal);
+
+  //40 or 41 white, 1018 brown
+  //now - 665, 666 dark, 22 or 23 white
+  rightVal = analogRead(rightAnalogPin);
+  //Serial.println("Right " + rightVal);
+  //Serial.println(rightVal);
+  
+  Serial.print(String(leftVal) + " ");
+  Serial.print(String(middleVal) + " ");
+  Serial.println(String(rightVal));
+                                   
+  if(!isBlack(leftVal)  && !isBlack(middleVal) && !isBlack(rightVal)) {
+    halt();
+  }
+  else if((!isBlack(leftVal) && !isBlack(rightVal)) || isBlack(middleVal)) {
+    forwards();
+  }
+  else if(isBlack(leftVal)  && !isBlack(rightVal)) {
+    left();
+  }
+  else if(!isBlack(leftVal) && isBlack(rightVal)) {
+    right();
+  }
+}
+   
+/*
+void oppDirections() {
+  digitalWrite(13, HIGH);
+  digitalWrite(12, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(10, HIGH);
+}
+*/
+
+bool isBlack(int sensorVal) {
+  if(sensorVal > THRESHOLD) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+void backwards() {
+  digitalWrite(13, HIGH);
+  digitalWrite(12, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(10, LOW);
+}
+
+void forwards() {
+  digitalWrite(13, LOW);
+  digitalWrite(12, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(10, HIGH);
+}
+
+void left() {
+  digitalWrite(13, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(10, HIGH);
+}
+
+void right() {
+  digitalWrite(13, LOW);
+  digitalWrite(12, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(10, LOW);
+}
+
+void halt() {
+  digitalWrite(13, LOW);
+  digitalWrite(12, LOW);
+  digitalWrite(11, LOW);
+  digitalWrite(10, LOW);
+}>
+```
